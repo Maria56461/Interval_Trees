@@ -1,9 +1,9 @@
-README- Barbu Maria-Alexandra, 315CD 
+# README- Barbu Maria-Alexandra, 315CD 
 
-Partea I:
+## Partea I:
 
-Arbori de intervale:
-	Pentru construirea arborelui: 
+## Arbori de intervale:
+### Pentru construirea arborelui: 
 Am alocat dinamic arborele, radacina arborelui, si intervalul corespunzator 
 radacinii. Am atribuit arborelui functiile de "actualizare" si de "combinare 
 raspunsuri copii", dar si "valoarea predefinita raspuns copil" pe care functia
@@ -13,7 +13,7 @@ intervalului si am apelat recursiv pana la frunze functia de construire a
 arborelui pentru intervalele (capat_stanga, mijloc) si (mijloc + 1, capat 
 dreapta). Am intors arborele creat. 
 
-	Pentru update nod:    
+### Pentru update nod:    
 Daca intervalul nodului este inclus in intervalul primit ca parametru, se 
 apeleaza functia de actualizare specifica arborelui respectiv. Daca nu, se 
 calculeaza mijlocul intervalului nodului si se merge de-a lungul arborelui, pe
@@ -21,7 +21,7 @@ stanga sau pe dreapta, pana se ajunge la un interval inclus in cel primit de
 functie. Se apeleaza functia recursiv si se realizeaza actualizarea informatiei
 din nod. 
 
-	Pentru query nod:
+### Pentru query nod:
 Raspunsurile copiilor sunt initializate cu 0. Daca intervalul nodului este 
 inclus in intervalul primit ca parametru, se returneaza informatia din nod. 
 Altfel, se calculeaza mijlocul intervalului nodului si se merge de-a lungul 
@@ -29,17 +29,17 @@ arborelui, pe stanga sau pe dreapta, pana se ajunge la un interval inclus in
 cel primit de functie. Se apeleaza recursiv functia de interogare si se 
 apeleaza functia de "combinare_raspunsuri_copii" specifica arborelui. 
 
-Partea a II-a: 
+## Partea a II-a: 
 
-Intersectii de intervale:
-	Pentru citirea din fisierul dat ca input:
+## Intersectii de intervale:
+### Pentru citirea din fisierul dat ca input:
 Am alocat lista si vectorul de intervale, am deschis fisierul pentru citire si 
 am citit mai intai ("fscanf") numarul de segmente. Am parcurs vectorul de 
 intervale, alocand fiecare interval in parte, impreuna cu punctul din stanga si 
 punctul din dreapta sa. Pentru fiecare interval am citit din "input_file" cele 
 4 coordonate. Am intors lista de intervale formata. 
 
-	Pentru calcularea numarului de intersectii, solutia cu arbori de intervale: 
+### Pentru calcularea numarului de intersectii, solutia cu arbori de intervale: 
 Am parcurs vectorul de segmente si am retinut ordonata maxima, atat pentru 
 punctele din stanga, cat si pentru cele din dreapta. Am pus intr-un vector de 
 lungime cat de doua ori dimensiunea listei ("v_x") toate abscisele punctelor 
@@ -67,7 +67,7 @@ drepte verticale, voi aloca un interval cu ambele capete egale cu ordonata
 punctului si voi face update in arbore pe acest interval, de data aceasta cu 
 valoarea "-1". Functia intoarce numarul de intersectii gasite. 
 
-	Pentru calcularea numarului de intersectii, solutia triviala: 
+### Pentru calcularea numarului de intersectii, solutia triviala: 
 Pentru solutia trviala am luat interval cu interval (2 for-uri) si daca am 
 gasit o pereche segment orizontal-segment vertical, daca x-ul celui vertical 
 este cuprins intre x-urile extremitatilor segmentului orizontal si daca y-ul 
@@ -75,23 +75,23 @@ celui orizontal este cuprins intre y-urile extremitatilor celui vertical,
 atunci incrementez numarul de intersectii. Functia intoarce numarul total de 
 intersectii gasite.  
 
-Partea a III-a:
+## Partea a III-a:
 
-Pozitie libera: 
-	Pentru citirea datelor din fisierul dat ca input:
+## Pozitie libera: 
+### Pentru citirea datelor din fisierul dat ca input:
 Am alocat structura ce cuprinde datele de intrare. Am deschis fisierul de 
 intrare si am citit mai intai numarul maxim din intrari si apoi numarul de 
 intrari. Ulterior, am parcurs vectorul de intrari si am citit cu "fscanf" 
 fiecare intrare in parte. 
 
-	Solutia triviala:
+### Solutia triviala:
 Am alocat vectorul solutie, initializand totodata toate elementele sale cu 
 zero. Am parcurs cu "for" lista de intrari si, daca la pozitia data de fiecare 
 element din lista, vectorul cu raspunsuri era nul, l-am facut sa aiba valoarea
 respectivului numar din vectorul de intrari. Daca, insa, pozitia era ocupata, 
 am parcurs inapoi vectorul cu raspunsuri pana am gasit o pozitie libera. 
 
-	Solutia cu arbori de intervale:
+### Solutia cu arbori de intervale:
 Am alocat vectorul-solutie si am construit un arbore de intervale cu radacina 
 de la 0 la numarul maxim din intrari. Am parcurs vectorul de intrari si, pentru
 fiecare intrare, mi-am construit un interval cu amandoua capetele egale cu 
